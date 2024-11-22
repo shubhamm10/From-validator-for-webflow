@@ -124,9 +124,13 @@ class WebflowValidator {
       }
     });
 
+    // Log for debugging: Check if isValid is being set correctly
+    console.log('Is form valid?', isValid);
+
     // Prevent submission if any field is invalid
     if (!isValid) {
       e.preventDefault(); // Stop form submission
+      console.log('Form submission prevented');
       // Scroll to the first error field for better UX
       const firstErrorField = form.querySelector('.validator-error-field');
       if (firstErrorField) {
