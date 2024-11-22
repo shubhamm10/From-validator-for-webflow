@@ -130,6 +130,7 @@ class WebflowValidator {
     // Prevent submission if any field is invalid
     if (!isValid) {
       e.preventDefault(); // Stop form submission
+      e.stopImmediatePropagation(); // Stop other listeners from triggering
       console.log('Form submission prevented');
       // Scroll to the first error field for better UX
       const firstErrorField = form.querySelector('.validator-error-field');
