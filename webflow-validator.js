@@ -117,17 +117,21 @@ class WebflowValidator {
     const fields = form.querySelectorAll('[data-validate]');
     let isValid = true;
 
+    // Validate each field
     fields.forEach(field => {
       if (!this.validateField(field)) {
         isValid = false;
       }
     });
 
+    // Prevent submission if any field is invalid
     if (!isValid) {
-      e.preventDefault();
-      // Scroll to first error
-      const firstError = form.querySelector('.validator-error-field');
-      firstError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      e.preventDefault(); // Stop form submission
+      // Scroll to the first error field for better UX
+      const firstErrorField = form.querySelector('.validator-error-field');
+      if (firstErrorField) {
+        firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
   }
 
