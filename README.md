@@ -13,7 +13,7 @@ A professional form validation solution for Webflow websites. This validator enh
 - No dependencies
 - Lightweight and performant
 
-## Installation
+## Installation - Coming Soon
 
 1. In your Webflow project, go to the Custom Code section
 2. Add the following script tag to the "Before </body> tag" section:
